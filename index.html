@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <div class="loading-overlay" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
     <div class="scroll-progress"></div>
     
     <nav class="navbar">
@@ -17,7 +20,7 @@
                 <li><a href="destinations.html">Destinations</a></li>
                 <li><a href="packages.html">Packages</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -27,8 +30,13 @@
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
+<section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('assets/images/everest.webp');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/pokhara.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/mustang.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/manang.jpg');"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Discover Nepal</h1>
@@ -37,6 +45,12 @@
                 <a href="destinations.html" class="btn btn-primary">Explore Destinations</a>
                 <a href="packages.html" class="btn btn-secondary">View Packages</a>
             </div>
+        </div>
+        <div class="slider-nav">
+            <span class="slider-dot active" data-slide="0"></span>
+            <span class="slider-dot" data-slide="1"></span>
+            <span class="slider-dot" data-slide="2"></span>
+            <span class="slider-dot" data-slide="3"></span>
         </div>
     </section>
 
@@ -116,7 +130,7 @@
                     <li><a href="culture.html">Culture</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.html">Travel Blog</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
                 </ul>
             </div>
             <div class="footer-section">

@@ -3,21 +3,42 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     initActiveNav();
     initFadeIn();
-    initParallax();
     initLightbox();
     initFormValidation();
     initMobileMenu();
+    initHeroSlider();
+    initLoading();
 });
+
+function initLoading() {
+    const loading = document.getElementById('loading');
+    if (!loading) return;
+
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            loading.classList.add('hidden');
+        }, 500);
+    });
+}
 
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
 
+    const hero = document.querySelector('.hero');
+    if (hero && window.scrollY <= 50) {
+        navbar.classList.add('transparent');
+    }
+
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
+            navbar.classList.remove('transparent');
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+            if (hero) {
+                navbar.classList.add('transparent');
+            }
         }
     });
 }
@@ -83,20 +104,34 @@ function initFadeIn() {
     });
 }
 
-function initParallax() {
-    const hero = document.querySelector('.hero');
-    const heroBg = document.querySelector('.hero-bg');
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    if (slides.length === 0) return;
 
-    if (!hero || !heroBg) return;
+    let currentSlide = 0;
+    const slideInterval = 5000;
 
-    window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
-        const rate = scrollY * 0.5;
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
 
-        if (scrollY <= hero.offsetHeight) {
-            heroBg.style.transform = 'translateY(' + rate + 'px)';
-        }
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        });
     });
+
+    setInterval(nextSlide, slideInterval);
 }
 
 function initLightbox() {
