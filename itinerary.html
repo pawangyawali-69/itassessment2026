@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itinerary - Discover Nepal</title>
+    <meta name="description" content="Detailed day-by-day travel itineraries for Nepal's top treks including Mustang, Rara Lake, Shey Phoksundo, Lumbini, and Ama Yangri.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -12,14 +17,19 @@
     </div>
     <div class="scroll-progress"></div>
     
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Discover <span>Nepal</span></a>
-            <ul class="nav-links">
+<ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
                 <li><a href="packages.html">Packages</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="itinerary.html" class="active">Itinerary</a></li>
+                <li><a href="culture.html">Culture</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="sitemap.html">Sitemap</a></li>
             </ul>
             <div class="hamburger">
@@ -30,113 +40,43 @@
         </div>
     </nav>
 
-    <section class="page-header">
+<section class="page-header">
         <div class="container">
             <h1>Travel Itineraries</h1>
             <p>Plan your perfect Nepal adventure with our detailed guides</p>
-        </div>
+</div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Everest Region</h2>
-                <p>5-10 days journey to the roof of the world</p>
+    <nav class="local-nav" aria-label="Jump to section">
+      <div class="container">
+        <ul>
+          <li><a href="#mustang-trek">Mustang</a></li>
+          <li><a href="#rara-trek">Rara Lake</a></li>
+          <li><a href="#phoksundo-trek">Shey Phoksundo</a></li>
+          <li><a href="#lumbini-trek">Lumbini</a></li>
+          <li><a href="#ama-yangri-trek">Ama Yangri</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="section" style="background:var(--bg-white); padding:32px 0;">
+      <div class="container">
+        <div class="cards-grid">
+          <div class="card fade-in">
+            <div class="card-image">
+              <img loading="lazy" src="assets/images/everest.webp" alt="Everest Base Camp starting point">
             </div>
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <div class="card-content">
-                        <h3>Classic EBC Trek (8-10 days)</h3>
-                        <table class="itinerary-table">
-                            <tr><td>Day 1</td><td>Fly Kathmandu → Lukla (2,840m)</td></tr>
-                            <tr><td>Day 2</td><td>Lukla → Phakding (2,610m) - 3 hours</td></tr>
-                            <tr><td>Day 3</td><td>Phakding → Namche Bazaar (3,440m) - 5 hours</td></tr>
-                            <tr><td>Day 4</td><td>Acclimatization day in Namche</td></tr>
-                            <tr><td>Day 5</td><td>Namche → Tengboche (3,860m) - 5 hours</td></tr>
-                            <tr><td>Day 6</td><td>Tengboche → Dingboche (4,410m) - 5 hours</td></tr>
-                            <tr><td>Day 7</td><td>Acclimatization in Dingboche</td></tr>
-                            <tr><td>Day 8</td><td>Dingboche → Lobuche (4,940m) - 4 hours</td></tr>
-                            <tr><td>Day 9</td><td>Lobuche → EBC (5,364m) → Gorakshep</td></tr>
-                            <tr><td>Day 10</td><td>Gorakshep → Kalapatthar → Pheriche → Namche</td></tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card fade-in">
-                    <div class="card-content">
-                        <h3>Everest View Trek (5-6 days)</h3>
-                        <p>A shorter alternative focusing on Sherpa culture and Himalayan views without the altitude challenges of EBC.</p>
-                        <table class="itinerary-table">
-                            <tr><td>Day 1</td><td>Fly Kathmandu → Lukla → Phakding</td></tr>
-                            <tr><td>Day 2</td><td>Phakding → Namche Bazaar</td></tr>
-                            <tr><td>Day 3</td><td>Namche → Everest View Hotel (3,880m)</td></tr>
-                            <tr><td>Day 4</td><td>Sunrise at Everest View Hotel</td></tr>
-                            <tr><td>Day 5-6</td><td>Return via Lukla</td></tr>
-                        </table>
-                    </div>
-                </div>
+          </div>
+          <div class="card fade-in">
+            <div class="card-image">
+              <img loading="lazy" src="assets/images/pokhara.webp" alt="Pokhara, gateway to Annapurna treks">
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="section" style="background: var(--bg-white);">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Annapurna Region</h2>
-                <p>Diverse landscapes from rhododendron forests to high altitudes</p>
-            </div>
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <div class="card-content">
-                        <h3>Ghorepani Poon Hill (4-5 days)</h3>
-                        <table class="itinerary-table">
-                            <tr><td>Day 1</td><td>Drive Pokhara → Tikhedhunga</td></tr>
-                            <tr><td>Day 2</td><td>Tikhedhunga → Ghorepani (2,850m)</td></tr>
-                            <tr><td>Day 3</td><td>Poon Hill sunrise → Tadapani</td></tr>
-                            <tr><td>Day 4</td><td>Tadapani → Ghandruk → Nayapul</td></tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="card fade-in">
-                    <div class="card-content">
-                        <h3>Annapurna Base Camp (7-10 days)</h3>
-                        <table class="itinerary-table">
-                            <tr><td>Day 1</td><td>Pokhara → Nayapul → Tikhedhunga</td></tr>
-                            <tr><td>Day 2</td><td>Tikhedhunga → Ghorepani</td></tr>
-                            <tr><td>Day 3</td><td>Ghorepani → Poon Hill sunrise → ABC (4,130m)</td></tr>
-                            <tr><td>Day 4-5</td><td>Explore ABC and Machapuchare base</td></tr>
-                            <tr><td>Day 6-7</td><td>Return via Chhomrong</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Manang Valley</h2>
-                <p>Ancient Tibetan culture in the heart of the Annapurnas</p>
-            </div>
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <div class="card-content">
-                        <h3>Manang Circuit (5-7 days)</h3>
-                        <table class="itinerary-table">
-                            <tr><td>Day 1</td><td>Drive Kathmandu → Besisahar (760m)</td></tr>
-                            <tr><td>Day 2</td><td>Besisahar → Chame (2,670m)</td></tr>
-                            <tr><td>Day 3</td><td>Chame → Pisang (3,300m)</td></tr>
-                            <tr><td>Day 4</td><td>Pisang → Manang (3,540m)</td></tr>
-                            <tr><td>Day 5</td><td>Ice Lake hike & monastery visit</td></tr>
-                            <tr><td>Day 6-7</td><td>Return via same route</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: var(--bg-white);">
+    <section class="section" id="mustang-trek" style="background: var(--bg-white);">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Mustang</h2>
@@ -159,7 +99,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="rara-trek">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Rara Lake</h2>
@@ -182,7 +122,7 @@
         </div>
     </section>
 
-    <section class="section" style="background: var(--bg-white);">
+    <section class="section" id="phoksundo-trek" style="background: var(--bg-white);">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Shey Phoksundo</h2>
@@ -206,7 +146,7 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="lumbini-trek">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Lumbini</h2>
@@ -226,7 +166,7 @@
         </div>
     </section>
 
-    <section class="section" style="background: var(--bg-white);">
+    <section class="section" id="ama-yangri-trek" style="background: var(--bg-white);">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Ama Yangri</h2>
@@ -244,7 +184,11 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
+
+    <nav class="secondary-nav" aria-label="Secondary navigation">
+        <a href="index.html">Home</a> | <a href="destinations.html">Destinations</a> | <a href="packages.html">Packages</a> | <a href="activities.html">Activities</a> | <a href="itinerary.html">Itinerary</a> | <a href="culture.html">Culture</a> | <a href="gallery.html">Gallery</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="sitemap.html">Sitemap</a>
+    </nav>
 
     <footer class="footer">
         <div class="footer-content">
@@ -284,6 +228,7 @@
         </div>
     </footer>
 
+    <button class="back-to-top" aria-label="Back to top">&#8593;</button>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

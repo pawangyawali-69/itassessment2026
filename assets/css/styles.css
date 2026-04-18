@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Google Fonts loaded via <link> in HTML for better performance */
 
 :root {
     --bg-light-gray: #F5F5F5;
@@ -144,10 +144,7 @@ body:not(.scrolled) > .navbar {
     background: #fff;
 }
 
-.navbar.scrolled {
-    background: rgba(255,255,255,0.98);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-}
+
 
 .nav-container {
     max-width: var(--max-width);
@@ -176,8 +173,11 @@ body:not(.scrolled) > .navbar {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 32px;
+    gap: 16px;
+    flex-wrap: wrap;
 }
+
+
 
 .nav-links a {
     font-size: 15px;
@@ -443,6 +443,7 @@ body:not(.scrolled) > .navbar {
 }
 
 .card {
+    position: relative;
     background: var(--bg-white);
     border-radius: 12px;
     overflow: hidden;
@@ -953,6 +954,49 @@ body:not(.scrolled) > .navbar {
     font-size: 14px;
 }
 
+/* Secondary Navigation */
+.secondary-nav {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 12px;
+}
+
+.secondary-nav a {
+    color: #aaa;
+    margin: 0 8px;
+}
+
+
+
+.secondary-nav a:hover {
+    color: var(--accent-gold);
+}
+
+/* Local Navigation */
+.local-nav {
+    background: var(--bg-white);
+    padding: 12px 20px;
+    border-bottom: 2px solid var(--accent-gold);
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 999;
+    text-align: center;
+}
+
+.local-nav a {
+    display: inline-block;
+    margin: 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.local-nav a:hover {
+    color: var(--accent-gold);
+}
+
 /* Fade-in Animations */
 .fade-in {
     opacity: 0;
@@ -1070,9 +1114,7 @@ body:not(.scrolled) > .navbar {
         grid-template-columns: 1fr;
     }
     
-    .blog-grid {
-        grid-template-columns: 1fr;
-    }
+
     
     .gallery-grid {
         grid-template-columns: 1fr;
@@ -1103,6 +1145,12 @@ body:not(.scrolled) > .navbar {
         font-weight: 600;
         color: var(--accent-gold);
         width: 80px;
+    }
+
+    .packages-table th,
+    .packages-table td {
+        padding: 12px;
+        font-size: 14px;
     }
 }
 
@@ -1191,20 +1239,113 @@ body:not(.scrolled) > .navbar {
     }
 }
 
-.fade-in {
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    background: var(--accent-gold);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.fade-in.visible {
+.back-to-top.visible {
     opacity: 1;
-    transform: translateY(0);
+    visibility: visible;
 }
-    
-    .packages-table th,
-    .packages-table td {
-        padding: 12px;
-        font-size: 14px;
+
+.back-to-top:hover {
+    background: #c9a432;
+    transform: translateY(-3px);
+    box-shadow: var(--gold-glow);
+}
+
+/* Gallery Captions */
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: var(--bg-white);
+    font-size: 14px;
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+a:visited {
+    color: #b8942e;
+}
+.nav-links a:visited {
+    color: #bfa96e;
+}
+a:active {
+    color: #e6b800;
+}
+
+/* Print Stylesheet */
+@media print {
+    .navbar, .secondary-nav, .scroll-progress, .loading-overlay,
+    .hamburger, .back-to-top, .lightbox, .hero-slider, .slider-nav {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 0;
+    }
+
+    .hero-content {
+        position: static;
+        color: black;
+        animation: none;
+        opacity: 1;
+    }
+
+    .hero-content h1 {
+        color: black;
+        text-shadow: none;
+    }
+
+    .section {
+        padding: 20px 0;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+
+    .footer {
+        background: white;
+        color: black;
+        border-top: 2px solid #ddd;
+    }
+
+    .footer-section h3, .footer-section p, .footer-section li {
+        color: black;
     }
 }

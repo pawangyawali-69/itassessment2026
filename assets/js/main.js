@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initHeroSlider();
     initLoading();
+    initBackToTop();
 });
 
 function initLoading() {
@@ -131,7 +132,16 @@ function initHeroSlider() {
         });
     });
 
-    setInterval(nextSlide, slideInterval);
+    var slideTimer = setInterval(nextSlide, slideInterval);
+
+    // Pause slider when page is hidden to save resources
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            clearInterval(slideTimer);
+        } else {
+            slideTimer = setInterval(nextSlide, slideInterval);
+        }
+    });
 }
 
 function initLightbox() {
@@ -143,7 +153,8 @@ function initLightbox() {
     if (galleryItems.length === 0 || !lightbox) return;
 
     galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
             const img = item.querySelector('img');
             if (img) {
                 lightboxImg.src = img.src;
@@ -249,7 +260,7 @@ function initFormValidation() {
                     'Phone: ' + (phoneInput ? phoneInput.value : '') + '\n' +
                     'Message: ' + (messageInput ? messageInput.value : '')
                 );
-                window.location.href = 'mailto:info@discoverfnepal.com?subject=' + subject + '&body=' + body;
+                window.location.href = 'mailto:info@discovernepal.com?subject=' + subject + '&body=' + body;
             }
         }
     });
@@ -302,5 +313,21 @@ function initMobileMenu() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
         });
+    });
+}
+function initBackToTop() {
+    var btn = document.querySelector('.back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }

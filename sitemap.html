@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sitemap - Discover Nepal</title>
+    <meta name="description" content="Complete sitemap of Discover Nepal website. Quick navigation to all pages including destinations, packages, activities, itineraries, and more.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -12,14 +17,19 @@
     </div>
     <div class="scroll-progress"></div>
     
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Discover <span>Nepal</span></a>
-            <ul class="nav-links">
+<ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
                 <li><a href="packages.html">Packages</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>
+                <li><a href="culture.html">Culture</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="sitemap.html" class="active">Sitemap</a></li>
             </ul>
             <div class="hamburger">
@@ -144,7 +154,11 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
+
+    <nav class="secondary-nav" aria-label="Secondary navigation">
+        <a href="index.html">Home</a> | <a href="destinations.html">Destinations</a> | <a href="packages.html">Packages</a> | <a href="activities.html">Activities</a> | <a href="itinerary.html">Itinerary</a> | <a href="culture.html">Culture</a> | <a href="gallery.html">Gallery</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="sitemap.html">Sitemap</a>
+    </nav>
 
     <footer class="footer">
         <div class="footer-content">
@@ -184,6 +198,7 @@
         </div>
     </footer>
 
+    <button class="back-to-top" aria-label="Back to top">&#8593;</button>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
