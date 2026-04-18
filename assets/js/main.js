@@ -18,7 +18,7 @@ function initLoading() {
     window.addEventListener('load', function() {
         setTimeout(function() {
             loading.classList.add('hidden');
-        }, 500);
+        }, 200);
     });
 }
 
@@ -95,12 +95,11 @@ function initFadeIn() {
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -150px 0px'
     });
 
-    fadeElements.forEach((element, index) => {
-        element.style.transitionDelay = (index * 0.1) + 's';
+    fadeElements.forEach((element) => {
         observer.observe(element);
     });
 }

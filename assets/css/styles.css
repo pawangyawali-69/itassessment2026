@@ -301,8 +301,8 @@ body:not(.scrolled) > .navbar {
     color: var(--bg-white);
     padding: 0 20px;
     opacity: 0;
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 0.5s;
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.2s;
 }
 
 .hero-content h1 {
@@ -348,11 +348,12 @@ body:not(.scrolled) > .navbar {
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
+    opacity: 1;
 }
 
 .btn-primary {
     background: var(--accent-gold);
-    color: var(--bg-white);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -363,8 +364,8 @@ body:not(.scrolled) > .navbar {
 
 .btn-secondary {
     background: transparent;
-    color: var(--bg-white);
-    border: 2px solid var(--bg-white);
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 .btn-secondary:hover {
@@ -1000,13 +1001,10 @@ body:not(.scrolled) > .navbar {
 /* Fade-in Animations */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.1s ease;
 }
-
 .fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Page Header */
